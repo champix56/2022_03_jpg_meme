@@ -14,3 +14,9 @@
     text-align: center;
     border:1px solid black;
 }
+#meme-creator{
+    display: flex;
+}
+#meme-creator>div:nth-child(1){
+    flex-grow: 1;
+}
