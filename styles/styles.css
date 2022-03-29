@@ -27,7 +27,7 @@ body{
     height: 100%;
 }
 #meme-creator>div:nth-child(1){
-    flex-grow: 1;
+    flex-grow: 1;padding: 10px; display: flex;
 }
 
 #meme-creator>div:nth-child(2){
