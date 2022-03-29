@@ -1,3 +1,8 @@
+body{
+    height: 99vh;
+    display: flex;
+    flex-direction: column;
+}
 .navbar-brand{
     color:grey;
     font-size: 22pt;
@@ -14,9 +19,17 @@
     text-align: center;
     border:1px solid black;
 }
+#wrapper{
+    flex-grow:1
+}
 #meme-creator{
     display: flex;
+    height: 100%;
 }
 #meme-creator>div:nth-child(1){
     flex-grow: 1;
+}
+
+#meme-creator>div:nth-child(2){
+    padding:10px 20px;
 }
