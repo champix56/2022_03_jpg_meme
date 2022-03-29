@@ -1,9 +1,13 @@
-header{
+.navbar-brand{
     color:grey;
-    font-size: 32pt;
+    font-size: 22pt;
     font-weight: 900;
     /* text-decoration: underline crimson; */
-    text-shadow: 20px 20px 25px grey;
+    text-shadow: 20px 20px 25px white;
     font-style: italic;
-    height: calc( 32pt + 50px) ;
+    height: calc( 22pt + 45px) ;
+    margin-right: 60px;
+}
+.navbar-nav, .navbar-nav ul, .navbar-nav li, .navbar-nav a{
+    height: calc( 22pt + 45px) ;
 }
