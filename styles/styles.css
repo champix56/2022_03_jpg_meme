@@ -1,3 +1,9 @@
-body{
-    color:tomato;
+header{
+    color:grey;
+    font-size: 32pt;
+    font-weight: 900;
+    /* text-decoration: underline crimson; */
+    text-shadow: 20px 20px 25px grey;
+    font-style: italic;
+    height: calc( 32pt + 50px) ;
 }
