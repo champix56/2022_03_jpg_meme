@@ -44,7 +44,7 @@
                     <hr/>
                     <form name="meme-form" id="meme-form" >
                         <label for="meme-name">Nom :</label>
-                        <br/><input type="text" name="meme-name" id="meme-name"/>
+                        <br/><input type="text" name="meme-name" id="meme-name" placeholder="Saisissez le titre"/>
                         <hr/>
                         <label for="meme-image">Image :</label>
                         <br/>
@@ -54,27 +54,28 @@
                         </select>
                         <hr/>
                         <label for="meme-text">Texte :</label>
-                        <br/><input type="text" name="meme-text" id="meme-text"/>
+                        <br/><input type="text" name="meme-text" id="meme-text" placeholder="Saisissez le texte"/>
                         <hr class="small"/>
+                        <h4>Style</h4>
                         <div class="flex-2-cols">
                             <div>
                                 <label for="meme-x">X :</label>
-                                <br/><input type="number" name="meme-x" id="meme-x" min="0"/>        
+                                <br/><input type="number" name="meme-x" id="meme-x" min="0" placeholder="position x"/>        
                             </div>
                             <div>
                                 <label for="meme-y">Y :</label>
-                                <br/><input type="number" name="meme-y" id="meme-y" min="0"/>        
+                                <br/><input type="number" name="meme-y" id="meme-y" min="0" placeholder="position x"/>        
                             </div>
                         </div>
                         <hr class="small"/>
                         <div class="flex-2-cols">
                             <div>
                                 <label for="meme-fontSize">fontSize :</label>
-                                <br/><input type="number" name="meme-fontSize" id="meme-fontSize" min="1"/>        
+                                <br/><input type="number" name="meme-fontSize" id="meme-fontSize" min="1"  placeholder="taille font"/>        
                             </div>
                             <div>
                                 <label for="meme-fontWeight">fontWeight :</label>
-                                <br/><input type="number" name="meme-fontWeight" id="meme-fontWeight" min="100" step="100" max="900"/>        
+                                <br/><input type="number" name="meme-fontWeight" id="meme-fontWeight" min="100" step="100" max="900" placeholder="poids font">        
                             </div>
                         </div>
                         <hr class="small"/>
