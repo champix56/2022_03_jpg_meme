@@ -10,3 +10,7 @@
 .navbar-nav, .navbar-nav ul, .navbar-nav li, .navbar-nav a, .navbar-brand{
     height: calc( 22pt + 45px) ;
 }
+#meme-creator>*{
+    text-align: center;
+    border:1px solid black;
+}
