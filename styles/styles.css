@@ -32,4 +32,16 @@ body{
 
 #meme-creator>div:nth-child(2){
     padding:10px 20px;
+    min-width: 333px;
+}
+.flex-2-cols{
+    display: flex;
+    justify-content: space-around;
+}
+.flex-2-cols>div>input[type="number"]{
+   width:100px;
+}
+hr.small{
+    width:50%;
+    margin-left: 25%;
 }
