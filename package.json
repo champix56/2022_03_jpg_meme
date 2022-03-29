@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/champix56/2022_03_jpg_meme/issues"
   },
-  "homepage": "https://github.com/champix56/2022_03_jpg_meme#readme"
+  "homepage": "https://github.com/champix56/2022_03_jpg_meme#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
