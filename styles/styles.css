@@ -3,6 +3,12 @@ body{
     display: flex;
     flex-direction: column;
 }
+#isJsLoaded{
+    background-color: crimson;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
 .navbar-brand{
     color:grey;
     font-size: 22pt;
