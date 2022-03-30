@@ -12,7 +12,7 @@ function Meme(){
     this.italic=false;
     this.color='#000000';
     this.image='futurama-suicide.jpg';
-    console.log(this);
+    console.log('forme Meme construite',this);
 }
 // objet dont la forme ne PEUX PAS CHANGER
 var unMemeGlobal=Object.seal(new Meme());
