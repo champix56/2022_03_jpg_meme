@@ -29,4 +29,11 @@ function setMemeOnSVGViewer(meme) {
     //y sans decomposition
     svgTextNode.attributes['y'].value=meme.y;
 
+    //moddif d'une valeur dans l'attribut style (pour le css enligne)
+    svgTextNode.style.fontWeight=meme.fontWeight;
+
+    //fontSize
+    svgTextNode.attributes['font-size'].value=meme.fontSize;
+    
+
 }
