@@ -22,4 +22,11 @@ function setMemeOnSVGViewer(meme) {
     // moddif du contenu HTML de la balise 
     svgTextNode.innerHTML=meme.text;
     
+    // x avec decomposition 
+    var attrib=svgTextNode.attributes['x'];
+    attrib.value=meme.x;
+
+    //y sans decomposition
+    svgTextNode.attributes['y'].value=meme.y;
+
 }
