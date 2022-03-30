@@ -85,4 +85,23 @@ function initFormEvents() {
                 unMemeGlobal.fontSize=evt.target.value;
                 setMemeOnSVGViewer(unMemeGlobal);
         });
+
+        document
+        .forms["meme-form"]["meme-underline"]
+        .addEventListener('input', function (evt) {
+                unMemeGlobal.underline=evt.target.checked;
+                setMemeOnSVGViewer(unMemeGlobal);
+        });
+        document
+        .forms["meme-form"]["meme-italic"]
+        .addEventListener('input', function (evt) {
+                unMemeGlobal.italic=evt.target.checked;
+                setMemeOnSVGViewer(unMemeGlobal);
+        });
+        document
+        .forms["meme-form"]["meme-color"]
+        .addEventListener('input', function (evt) {
+                unMemeGlobal.color=evt.target.value;
+                setMemeOnSVGViewer(unMemeGlobal);
+        });
 }
