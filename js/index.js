@@ -37,5 +37,10 @@ function setMemeOnSVGViewer(meme) {
 
     //fill
     svgTextNode.attributes['fill'].value=meme.color;
+    
+    //remplissage contionnel avec test ternaire (if et else)
+    svgTextNode.style.fontStyle=(meme.italic ? 'italic':'normal');
 
+    //remplissage contionnel avec test ternaire (if et else)
+    svgTextNode.style.textDecoration=(meme.underline ? 'underline':'none');
 }
