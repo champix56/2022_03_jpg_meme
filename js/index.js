@@ -2,7 +2,5 @@
 var baliseJsLoaded=document.querySelector("#isJsLoaded");
 //edition dui contenu de la balise contenu dans la avriable
 baliseJsLoaded.innerHTML="JS loaded";
-//edition du comportement de style de la balise
-baliseJsLoaded.style.backgroundColor="skyblue";
-
+baliseJsLoaded.className="isLoaded";
 console.log('Le js est chargé',baliseJsLoaded);

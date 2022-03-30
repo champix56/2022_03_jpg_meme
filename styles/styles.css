@@ -3,10 +3,17 @@ body{
     display: flex;
     flex-direction: column;
 }
-#isJsLoaded{
+#isJsLoaded.isNotLoaded{
     background-color: crimson;
     color: white;
     font-weight: 900;
+    text-align: center;
+}
+#isJsLoaded.isLoaded{
+    background-color: skyblue;
+    color: white;
+    font-weight: 100;
+    font-size: 8pt;
     text-align: center;
 }
 .navbar-brand{
