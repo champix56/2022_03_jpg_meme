@@ -10,7 +10,10 @@ function lorsDuChargementDeLaPage() {
     console.log('Le js est chargé', baliseJsLoaded);
 }
 document.addEventListener('DOMContentLoaded',lorsDuChargementDeLaPage);
-
+/**
+ * affiche le meme en parm dans le viewer svg
+ * @param {Meme} meme un meme instancier def. demo meme si undefined
+ */
 function setMemeOnSVGViewer(meme) {
     //gestion d'un valeur par default
     if(undefined===meme){
