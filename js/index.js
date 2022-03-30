@@ -34,6 +34,8 @@ function setMemeOnSVGViewer(meme) {
 
     //fontSize
     svgTextNode.attributes['font-size'].value=meme.fontSize;
-    
+
+    //fill
+    svgTextNode.attributes['fill'].value=meme.color;
 
 }
