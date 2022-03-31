@@ -48,6 +48,9 @@ function setMemeOnSVGViewer(meme) {
     //remplissage contionnel avec test ternaire (if et else)
     svgTextNode.style.textDecoration = (meme.underline ? 'underline' : 'none');
 }
+/**
+ * init tous les events sur les inputs du form
+ */
 function initFormEvents() {
     document
         .forms["meme-form"]["meme-text"]
@@ -104,4 +107,23 @@ function initFormEvents() {
                 unMemeGlobal.color=evt.target.value;
                 setMemeOnSVGViewer(unMemeGlobal);
         });
+        setMemeValuesInFormInputs(unMemeGlobal);
+}
+/**
+ * set meme values in all inputs 
+ * @param {Meme} meme 
+ */
+function setMemeValuesInFormInputs(meme) {
+    if(undefined===meme){return;}
+    var form=document.forms["meme-form"];
+    form["meme-name"].value=meme.name;
+    form["meme-text"].value=meme.text;
+    form["meme-x"].value=meme.x;
+    form["meme-y"].value=meme.y;
+    form["meme-fontWeight"].value=meme.fontWeight;
+    form["meme-fontSize"].value=meme.fontSize;
+    form["meme-underline"].checked=meme.underline;
+    form["meme-italic"].checked=meme.italic;
+    form["meme-color"].value=meme.color;
+    setMemeOnSVGViewer(meme);
 }
