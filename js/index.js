@@ -8,7 +8,7 @@ function lorsDuChargementDeLaPage() {
     baliseJsLoaded.innerHTML = "JS loaded";
     baliseJsLoaded.className = "isLoaded";
     console.log('Le js est chargé', baliseJsLoaded);
-    initFormEvents();
+    initForm();
 }
 document.addEventListener('DOMContentLoaded', lorsDuChargementDeLaPage);
 /**
@@ -47,11 +47,31 @@ function setMemeOnSVGViewer(meme) {
 
     //remplissage contionnel avec test ternaire (if et else)
     svgTextNode.style.textDecoration = (meme.underline ? 'underline' : 'none');
+
+    //gestion de correlation de l'id d'image avec un objet d'image comprenant l'id le chemin et la dimension
+    var img=listeGlobalImages.find(function(element){
+                return meme.imageId===element.id;
+    });
+    //pas d'image trouvé
+    if(undefined!==img){
+        var svgNode=document.querySelector('svg');
+        svgNode.setAttribute('viewBox','0 0 '+img.w+' '+img.h)
+        //mise a jour de lement svg image 
+        var svgImg=svgNode.querySelector('image');
+        svgImg.setAttribute('xlink:href','/img/'+img.href);
+    }
+    else{
+        var svgNode=document.querySelector('svg');
+        svgNode.setAttribute('viewBox','0 0 500 500')
+        //mise a jour de lement svg image 
+        var svgImg=svgNode.querySelector('image');
+        svgImg.setAttribute('xlink:href','');    
+    }
 }
 /**
  * init tous les events sur les inputs du form
  */
-function initFormEvents() {
+function initForm() {
     document
         .forms["meme-form"]["meme-text"]
         .addEventListener('input', function (evt) {
@@ -107,7 +127,26 @@ function initFormEvents() {
                 unMemeGlobal.color=evt.target.value;
                 setMemeOnSVGViewer(unMemeGlobal);
         });
+        document
+        .forms["meme-form"]["meme-image"]
+        .addEventListener('change',function(evt){
+                unMemeGlobal.imageId=parseInt(evt.target.value);
+                setMemeOnSVGViewer(unMemeGlobal);
+        });
+        document.forms["meme-form"].addEventListener('submit',function(evt){
+                evt.preventDefault();
+                (new CRUD('http://localhost:5679'))
+                        .post('/memes',
+                                function(response){
+                                        alert('c\'est enregistrer ...bonne soiree a demain')
+                                },
+                                unMemeGlobal,
+                                'application/json'
+                        );
+        })
+
         setMemeValuesInFormInputs(unMemeGlobal);
+       loadGlobalesImages(loadSelectWithImages);
 }
 /**
  * set meme values in all inputs 
@@ -126,4 +165,27 @@ function setMemeValuesInFormInputs(meme) {
     form["meme-italic"].checked=meme.italic;
     form["meme-color"].value=meme.color;
     setMemeOnSVGViewer(meme);
+}
+
+/**
+ * remplissage DOM du select option avec une liste d'image
+ * @param {Array} images 
+ */
+ function loadSelectWithImages(images) {
+        var select=document.forms["meme-form"]["meme-image"];
+        /*for(var i=0;i<images.length;i++){
+            //cree un option
+
+            //ajoute le option au select
+        }*/
+         images.forEach(function(unObjetDuTableau,positionDeLelement)
+         {
+            //select.innerHTML=select.innerHTML+'<option value="'+unObjetDuTableau.id+'">'+unObjetDuTableau.name+'</option>'
+            //cree un option
+            var opt=document.createElement('option');
+            opt.value=unObjetDuTableau.id;
+            opt.innerHTML=unObjetDuTableau.name;
+            //ajoute le option au select
+            select.appendChild(opt);
+         })
 }
