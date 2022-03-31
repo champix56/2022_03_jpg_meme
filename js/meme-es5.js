@@ -3,16 +3,16 @@
  */
 function Meme() {
     this.id = undefined;
-    this.name='';
-    this.text='';
-    this.x=0;
-    this.y=0;
-    this.fontSize=12;
-    this.fontWeight='900';
-    this.underline=false;
-    this.italic=false;
-    this.color='#000000';
-    this.image='futurama-suicide.jpg';
+    this.name = '';
+    this.text = '';
+    this.x = 0;
+    this.y = 0;
+    this.fontSize = 12;
+    this.fontWeight = '900';
+    this.underline = false;
+    this.italic = false;
+    this.color = '#000000';
+    this.imageId =1;// 'futurama-suicide.jpg';
     console.log('forme Meme construite', this);
     /**
      * set meme values to demo values
@@ -27,9 +27,19 @@ function Meme() {
         this.underline = true;
         this.italic = false;
         this.color = '#ACACAC';
-        this.image = 'futurama-suicide.jpg';
+        this.imageId = 1;
     }
 }
 // objet dont la forme ne PEUX PAS CHANGER
 var unMemeGlobal = Object.seal(new Meme());
 unMemeGlobal.setDummyValues();
+
+var listeGlobalImages = [];
+
+function loadGlobalesImages(callback) {
+    var callerHTTP = new CRUD('http://localhost:5679');
+    callerHTTP.get('/images', function (response) {
+        listeGlobalImages=JSON.parse(response);
+        callback(listeGlobalImages);
+    });
+}
