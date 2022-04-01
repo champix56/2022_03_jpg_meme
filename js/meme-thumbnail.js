@@ -19,7 +19,7 @@ function fillMemeThumbnail(memes,nodeToFill) {
             //stop du comportement par def.
             evt.preventDefault();
             //surcharge de l'url sans reload de page
-            history.pushState('','','/edit/memes/'+1);
+            history.pushState('','','/edit/memes/'+e.id);
 
             // selection global du meme 
             unMemeGlobal=e;
