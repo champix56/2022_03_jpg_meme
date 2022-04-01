@@ -1,33 +1,72 @@
 {
-    "images": [
-        {
-            "id": 1,
-            "href": "futurama-suicide.jpg",
-            "w": 800,
-            "h": 450,
-            "name": "futurama scuicide cab"
-        },
-        {
-            "id": 2,
-            "href": "caro.jpg",
-            "w": 1600,
-            "h": 1200,
-            "name": "caro"
-        }
-    ],
-    "memes": [
-        {
-            "id":0,
-            "name": "Dummy demo meme",
-            "text": "Breizh ma bro",
-            "x": 50,
-            "y": 50,
-            "fontSize": 20,
-            "fontWeight": "900",
-            "underline": true,
-            "italic": false,
-            "color": "#ACACAC",
-            "imageId": 1
-        }
-    ]
+  "images": [
+    {
+      "id": 1,
+      "href": "futurama-suicide.jpg",
+      "w": 800,
+      "h": 450,
+      "name": "futurama scuicide cab"
+    },
+    {
+      "id": 2,
+      "href": "caro.jpg",
+      "w": 1600,
+      "h": 1200,
+      "name": "caro"
+    }
+  ],
+  "memes": [
+    {
+      "name": "Dummy demo meme",
+      "text": "Breizh ma bro",
+      "x": 50,
+      "y": 50,
+      "fontSize": 20,
+      "fontWeight": "900",
+      "underline": true,
+      "italic": false,
+      "color": "#ACACAC",
+      "imageId": 1,
+      "id": 0
+    },
+    {
+      "name": "Dummy demo meme",
+      "text": "fellicitation pour ton 15/20",
+      "x": 50,
+      "y": "800",
+      "fontSize": "100",
+      "fontWeight": "900",
+      "underline": true,
+      "italic": false,
+      "color": "#e22c2c",
+      "imageId": 2,
+      "id": 1
+    },
+    {
+      "name": "Dummy demo meme",
+      "text": "Breizh ma bro",
+      "x": 50,
+      "y": 50,
+      "fontSize": 20,
+      "fontWeight": "900",
+      "underline": true,
+      "italic": false,
+      "color": "#ACACAC",
+      "imageId": 1,
+      "id": 2
+    },
+    {
+      "name": "Dummy demo meme",
+      "text": "Breizh ma bro",
+      "x": 50,
+      "y": 50,
+      "fontSize": 20,
+      "fontWeight": "900",
+      "underline": true,
+      "italic": false,
+      "color": "#ACACAC",
+      "imageId": 1,
+      "id": 3
+    }
+  ]
 }
