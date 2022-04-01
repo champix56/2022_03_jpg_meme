@@ -1,3 +1,4 @@
+import initThumbnailView  from './meme-thumbnail.js'
 /**
  * fonction d'activation du js
  */

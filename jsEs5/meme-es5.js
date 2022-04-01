@@ -1,7 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.loadGlobalesImages = exports.listeGlobalImages = exports.loadGlobalesMemes = exports.unMemeGlobal = exports.Meme = void 0;
 /**
  * constructeur d'un objet meme
  */
-export function Meme() {
+function Meme() {
     this.id = undefined;
     this.name = '';
     this.text = '';
@@ -12,7 +15,7 @@ export function Meme() {
     this.underline = false;
     this.italic = false;
     this.color = '#000000';
-    this.imageId =1;// 'futurama-suicide.jpg';
+    this.imageId = 1; // 'futurama-suicide.jpg';
     console.log('forme Meme construite', this);
     /**
      * set meme values to demo values
@@ -28,30 +31,29 @@ export function Meme() {
         this.italic = false;
         this.color = '#ACACAC';
         this.imageId = 1;
-    }
+    };
 }
+exports.Meme = Meme;
 // objet dont la forme ne PEUX PAS CHANGER
-export let  unMemeGlobal = Object.seal(new Meme());
-unMemeGlobal.setDummyValues();
-
+exports.unMemeGlobal = Object.seal(new Meme());
+exports.unMemeGlobal.setDummyValues();
 /**
  * instance d'acces au serveur de data rest
  */
 var callerRestHTTP = new CRUD(ARD_REST_SRV);
-
-var memes=[];
-export function loadGlobalesMemes(clbk){
-    callerRestHTTP.get('/memes',function(response){
-        memes=JSON.parse(response);    
+var memes = [];
+function loadGlobalesMemes(clbk) {
+    callerRestHTTP.get('/memes', function (response) {
+        memes = JSON.parse(response);
         clbk(memes);
     });
 }
-
-export let listeGlobalImages = [];
-
-export function loadGlobalesImages(callback) {
+exports.loadGlobalesMemes = loadGlobalesMemes;
+exports.listeGlobalImages = [];
+function loadGlobalesImages(callback) {
     callerRestHTTP.get('/images', function (response) {
-        listeGlobalImages=JSON.parse(response);
-        callback(listeGlobalImages);
+        exports.listeGlobalImages = JSON.parse(response);
+        callback(exports.listeGlobalImages);
     });
 }
+exports.loadGlobalesImages = loadGlobalesImages;

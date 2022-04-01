@@ -1,3 +1,5 @@
+import { loadGlobalesMemes } from "./meme-es5.js";
+
 export default function initThumbnailView(wrapperNode) {
     //appel xhr mais avec promise ES6
     fetch(location.origin+'/views/meme-thumbnail.html')

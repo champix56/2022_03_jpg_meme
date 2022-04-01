@@ -70,7 +70,7 @@ export function CRUD(restAdr) {
      * @param {number} id id optionnel de la ressource de liste
      * @param {Function} unsuccessCallback traitement callback en cas d'echec
      */
-    this.get = function (ressourceUrl, successCallback, id, unsuccessCallback) {
+    this.get = function (ressourceUrl:string, successCallback?:Function, id?:number, unsuccessCallback?:Function) {
         this.callXHR(ressourceUrl, successCallback, 'GET', id, undefined, undefined, unsuccessCallback)
     }
     /**
