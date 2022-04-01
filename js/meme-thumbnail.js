@@ -1,3 +1,24 @@
+function initThumbnailView(wrapperNode) {
+    //appel xhr mais avec promise ES6
+    fetch(location.origin+'/views/meme-thumbnail.html')
+        .then(f=>{
+            return  f.text();
+        })
+        .then(resp=>{
+            var domparser=new DOMParser();
+            var doc=domparser.parseFromString(resp, 'text/html');
+            let wrapperChildren=wrapperNode.querySelectorAll('*');
+            if(undefined!==wrapperChildren){
+                wrapperChildren.forEach(e=>{e.remove()});
+            }
+            wrapperNode.appendChild(doc.querySelector('#meme-thumbnail'))
+            loadGlobalesMemes(fillMemeThumbnail);
+        })
+}
+
+
+
+
 /**
  * fonction de remplissage du thumbnail
  * @param {Array<Meme>} memes 
@@ -33,4 +54,4 @@ function fillMemeThumbnail(memes,nodeToFill) {
     nodeToFill.querySelector('ul').remove();
     nodeToFill.appendChild(ulNode);
 }
-loadGlobalesMemes(fillMemeThumbnail);
+// loadGlobalesMemes(fillMemeThumbnail);
