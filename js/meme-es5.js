@@ -37,7 +37,7 @@ unMemeGlobal.setDummyValues();
 /**
  * instance d'acces au serveur de data rest
  */
-var callerRestHTTP = new CRUD('http://localhost:5679');
+var callerRestHTTP = new CRUD(ARD_REST_SRV);
 
 var memes=[];
 function loadGlobalesMemes(clbk){
