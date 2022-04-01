@@ -176,3 +176,30 @@ function setMemeValuesInFormInputs(meme) {
             select.appendChild(opt);
          })
 }
+function initMemeCreatorView(wrapperNode,id) {
+    //appel xhr mais avec promise ES6
+    fetch(location.origin+'/views/meme-creator.html')
+    //1ere etape de reception -> transformation du flux recu en text
+        .then(f=>{
+            return  f.text();
+        })
+        //2eme etape traitement de la recption
+        .then(resp=>{
+            //creation d'un parser pour un DOM html
+            var domparser=new DOMParser();
+            // creation dun document DOM constitué dans le body de la chaine HTML recu par le fetch
+            var doc=domparser.parseFromString(resp, 'text/html');
+            //je cherche les enfants existant dans la section que je remplirai dans la page qui est a l'ecran
+            let wrapperChildren=wrapperNode.querySelectorAll('*');
+            //si il y a des enfants
+            if(undefined!==wrapperChildren){
+                //pour chaque enfant je demande leur suppression de la page affiché pour vider le wrapper
+                wrapperChildren.forEach(e=>{e.remove()});
+            }
+            //jajoute dans le conteneur de la page à l'ecran le contenu sous forme de Node(document) HTML 
+            wrapperNode.appendChild(doc.querySelector('#meme-creator'))
+
+            
+           // loadGlobalesMemes(fillMemeThumbnail);
+        })
+}
