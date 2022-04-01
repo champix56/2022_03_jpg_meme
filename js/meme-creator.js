@@ -2,7 +2,7 @@
  * affiche le meme en parm dans le viewer svg
  * @param {Meme} meme un meme instancier def. demo meme si undefined
  */
-function setMemeOnSVGViewer(meme) {
+export function setMemeOnSVGViewer(meme) {
     //gestion d'un valeur par default
     if (undefined === meme) {
         meme = new Meme();
@@ -58,7 +58,7 @@ function setMemeOnSVGViewer(meme) {
 /**
  * init tous les events sur les inputs du form
  */
-function initForm() {
+export function initForm() {
     document
         .forms["meme-form"]["meme-text"]
         .addEventListener('input', function (evt) {
@@ -139,7 +139,7 @@ function initForm() {
  * set meme values in all inputs 
  * @param {Meme} meme 
  */
-function setMemeValuesInFormInputs(meme) {
+export function setMemeValuesInFormInputs(meme) {
     if (undefined === meme) { return; }
     var form = document.forms["meme-form"];
     form["meme-name"].value = meme.name;
@@ -158,7 +158,7 @@ function setMemeValuesInFormInputs(meme) {
  * remplissage DOM du select option avec une liste d'image
  * @param {Array} images 
  */
-function loadSelectWithImages(images) {
+export function loadSelectWithImages(images) {
     var select = document.forms["meme-form"]["meme-image"];
     /*for(var i=0;i<images.length;i++){
         //cree un option
@@ -175,7 +175,7 @@ function loadSelectWithImages(images) {
         select.appendChild(opt);
     })
 }
-function initMemeCreatorView(wrapperNode, id) {
+export function initMemeCreatorView(wrapperNode, id) {
     //appel xhr mais avec promise ES6
     const promiseCreator = fetch(location.origin + '/views/meme-creator.html')
         //1ere etape de reception -> transformation du flux recu en text

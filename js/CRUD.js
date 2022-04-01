@@ -2,7 +2,7 @@
  * instanciation d'un objet CRUD pour rest ou http
  * @param {string} restAdr base url d'appel ex : http://localhost
  */
-function CRUD(restAdr) {
+export function CRUD(restAdr) {
 
     /**
      * Fonction generique pour appel XHR

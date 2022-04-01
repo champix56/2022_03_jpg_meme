@@ -1,4 +1,4 @@
-function initThumbnailView(wrapperNode) {
+export default function initThumbnailView(wrapperNode) {
     //appel xhr mais avec promise ES6
     fetch(location.origin+'/views/meme-thumbnail.html')
         .then(f=>{

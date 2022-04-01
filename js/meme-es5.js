@@ -1,7 +1,7 @@
 /**
  * constructeur d'un objet meme
  */
-function Meme() {
+export function Meme() {
     this.id = undefined;
     this.name = '';
     this.text = '';
@@ -31,7 +31,7 @@ function Meme() {
     }
 }
 // objet dont la forme ne PEUX PAS CHANGER
-var unMemeGlobal = Object.seal(new Meme());
+export let  unMemeGlobal = Object.seal(new Meme());
 unMemeGlobal.setDummyValues();
 
 /**
@@ -40,16 +40,16 @@ unMemeGlobal.setDummyValues();
 var callerRestHTTP = new CRUD(ARD_REST_SRV);
 
 var memes=[];
-function loadGlobalesMemes(clbk){
+export function loadGlobalesMemes(clbk){
     callerRestHTTP.get('/memes',function(response){
         memes=JSON.parse(response);    
         clbk(memes);
     });
 }
 
-var listeGlobalImages = [];
+export let listeGlobalImages = [];
 
-function loadGlobalesImages(callback) {
+export function loadGlobalesImages(callback) {
     callerRestHTTP.get('/images', function (response) {
         listeGlobalImages=JSON.parse(response);
         callback(listeGlobalImages);
