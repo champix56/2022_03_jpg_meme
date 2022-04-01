@@ -12,9 +12,10 @@
         <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <!-- def secondaire de notre css pour augmenter la priorité de notre css -->
         <link rel="stylesheet" href="/styles/styles.css">
-        <script src="js/CRUD.js"></script>
-        <script src="js/meme-es5.js"></script>
-        <script src="js/index.js"></script>
+        <script src="/js/CRUD.js"></script>
+        <script src="/js/meme-es5.js"></script>
+        <script src="/js/meme-thumbnail.js"></script>
+        <script src="/js/index.js"></script>
     </head>
     <body>
         <div id="isJsLoaded" class="isNotLoaded">JS pas chargé</div>
@@ -35,7 +36,13 @@
                 </ul>
             </div>
         </header>
-        <div id="wrapper">
+        <div id="wrapper"> 
+            <div id="meme-thumbnail">
+                    <h2>Liste des memes sur le serveur</h2>
+                    <ul>
+
+                    </ul>
+                </div>
             <div id="meme-creator">
                 <div id="meme-viewer">
                     <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -43,6 +50,7 @@
                         <text x="100" y="50" font-size="45" fill="white" style="font-weight:500" >DEMAT Breizh</text>
                     </svg>
                 </div>
+               
                 <div id="meme-editor">
                     <h1>Editor</h1>
                     <hr/>
