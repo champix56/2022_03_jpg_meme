@@ -42,11 +42,7 @@ function fillMemeThumbnail(memes,nodeToFill) {
             //surcharge de l'url sans reload de page
             history.pushState('','','/edit/memes/'+e.id);
 
-            // selection global du meme 
-            unMemeGlobal=e;
-            //affichage du meme selectionné + tremplissage des input
-            setMemeValuesInFormInputs(e);
-            setMemeOnSVGViewer(e);
+           initMemeCreatorView(nodeToFill,e.id);
         });
         liNode.appendChild(aNode);
         ulNode.appendChild(liNode); 
